@@ -2,6 +2,8 @@
 
 This action runs the Grit CLI to report any violations of your configured [Grit patterns](https://docs.grit.io/guides/config).
 
+This action will add annotations to the GitHub commit or pull request with any `warning` or `error` patterns that are matched. If any `error` patterns are matched, the action will fail the workflow (exit code 1).
+
 ## Usage
 
 You can add it as a step in your GitHub Actions workflow to automatically check for violations on every push:
