@@ -8,6 +8,9 @@ inputs:
     description: 'Optional additional arguments to `grit check`'
     required: false
     default: ''
+branding:
+  icon: 'check-circle'
+  color: 'blue'
 runs:
     using: 'composite'
     steps:
