@@ -1,0 +1,9 @@
+version: 0.0.1
+patterns:
+  - name: github.com/getgrit/stdlib#*
+  - name: use_ubuntu
+    description: 'This is a no-op warning meant for testing. You can ignore it.'
+    level: warn
+    body: |
+      language yaml
+      `runs-on: ubuntu-latest` => `runs-on: "ubuntu-latest"`

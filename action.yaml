@@ -1,0 +1,28 @@
+# Copyright (c) Iuvo AI, Inc.
+# SPDX-License-Identifier: MIT
+#
+name: 'Grit Check'
+description: 'Run Grit checks via GitHub actions'
+inputs:
+  args:
+    description: 'Optional additional arguments to `grit check`'
+    required: false
+    default: ''
+runs:
+    using: 'composite'
+    steps:
+      - name: install grit
+        shell: bash
+        id: download
+        run: |
+          curl -fsSL https://docs.grit.io/install | bash
+      - name: init grit
+        id: init
+        shell: bash
+        run: |
+          grit init
+      - name: run grit check
+        id: check
+        shell: bash
+        run: |
+          grit check --github-actions ${{ inputs.args }}
